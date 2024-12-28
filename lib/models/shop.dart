@@ -29,7 +29,7 @@ class Shop {
     ),
   ];
   //user cart
-  List<Product> _cart = [];
+  final List<Product> _cart = [];
 
   //get product list
   List<Product> get products => _products;
