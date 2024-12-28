@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:newecom/models/product.dart';
 
-class Shop {
+class Shop extends ChangeNotifier {
   //shop products
-  List<Product> _products = [
+  final List<Product> _products = [
     Product(
       name: 'Product 1',
       price: 69.99,
@@ -40,10 +41,12 @@ class Shop {
   //add to cart
   void addToCart(Product product) {
     _cart.add(product);
+    notifyListeners();
   }
 
   //remove from cart
   void removeFromCart(Product product) {
     _cart.remove(product);
+    notifyListeners();
   }
 }
